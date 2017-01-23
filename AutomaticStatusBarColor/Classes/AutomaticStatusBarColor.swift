@@ -44,7 +44,6 @@ extension UIViewController {
     }
 
     func asb_viewWillAppear(animated: Bool) {
-
         if !AutomaticStatusBarColor.sharedInstance.disabledViewControllers.contains(self) &&
             AutomaticStatusBarColor.sharedInstance.isEnabled {
             let customStatusBarViewControllers = AutomaticStatusBarColor.sharedInstance.customStatusBarViewControllers
@@ -65,9 +64,13 @@ extension UIViewController {
 
     private func statusBarImage() -> UIImage? {
         UIGraphicsBeginImageContext(UIApplication.shared.statusBarFrame.size)
-        if let ctx = UIGraphicsGetCurrentContext(),
-            let topWindow = UIApplication.shared.windows.last {
-            topWindow.layer.render(in: ctx)
+        if let ctx = UIGraphicsGetCurrentContext() {
+
+            if let navigationController = navigationController, !navigationController.navigationBar.isHidden {
+                navigationController.view.layer.render(in: ctx)
+            } else {
+                view.layer.render(in: ctx)
+            }
         }
 
         let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()
