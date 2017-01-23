@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import AutomaticStatusBarColor
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        AutomaticStatusBarColor.sharedInstance.force(statusBarStyle: .lightContent, forViewController: self)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
