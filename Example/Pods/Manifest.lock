@@ -1,0 +1,16 @@
+PODS:
+  - AutomaticStatusBarColor (0.1.0)
+
+DEPENDENCIES:
+  - AutomaticStatusBarColor (from `../`)
+
+EXTERNAL SOURCES:
+  AutomaticStatusBarColor:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AutomaticStatusBarColor: 91ddc36ad4a63a8d1c01875d7de00f25bdb1812f
+
+PODFILE CHECKSUM: 6128542f37ac3829afaddec6978eb57fd27cf0f7
+
+COCOAPODS: 1.2.0.beta.3

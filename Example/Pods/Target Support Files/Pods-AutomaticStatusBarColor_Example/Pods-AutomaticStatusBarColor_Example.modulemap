@@ -1,0 +1,6 @@
+framework module Pods_AutomaticStatusBarColor_Example {
+  umbrella header "Pods-AutomaticStatusBarColor_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

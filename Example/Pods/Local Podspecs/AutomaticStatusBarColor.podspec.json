@@ -1,0 +1,22 @@
+{
+  "name": "AutomaticStatusBarColor",
+  "version": "0.1.0",
+  "summary": "A short description of AutomaticStatusBarColor.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/AutomaticStatusBarColor",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Victor Carmouze": "victor.carmouze@backelite.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/AutomaticStatusBarColor.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AutomaticStatusBarColor/Classes/**/*"
+}

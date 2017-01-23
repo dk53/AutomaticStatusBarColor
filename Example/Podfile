@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AutomaticStatusBarColor_Example' do
+  pod 'AutomaticStatusBarColor', :path => '../'
+
+  target 'AutomaticStatusBarColor_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

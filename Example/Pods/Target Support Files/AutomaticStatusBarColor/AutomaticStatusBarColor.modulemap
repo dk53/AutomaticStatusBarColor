@@ -1,0 +1,6 @@
+framework module AutomaticStatusBarColor {
+  umbrella header "AutomaticStatusBarColor-umbrella.h"
+
+  export *
+  module * { export * }
+}
