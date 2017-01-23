@@ -1,6 +1,6 @@
 # AutomaticStatusBarColor
 
-[![CI Status](http://img.shields.io/travis/dk53/AutomaticStatusBarColor.svg?style=flat)](https://travis-ci.org/Victor Carmouze/AutomaticStatusBarColor)
+[![CI Status](http://img.shields.io/travis/dk53/AutomaticStatusBarColor.svg?style=flat)](https://travis-ci.org/dk53/AutomaticStatusBarColor)
 [![Version](https://img.shields.io/cocoapods/v/AutomaticStatusBarColor.svg?style=flat)](http://cocoapods.org/pods/AutomaticStatusBarColor)
 [![License](https://img.shields.io/cocoapods/l/AutomaticStatusBarColor.svg?style=flat)](http://cocoapods.org/pods/AutomaticStatusBarColor)
 [![Platform](https://img.shields.io/cocoapods/p/AutomaticStatusBarColor.svg?style=flat)](http://cocoapods.org/pods/AutomaticStatusBarColor)
