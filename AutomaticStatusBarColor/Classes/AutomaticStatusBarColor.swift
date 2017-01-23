@@ -13,7 +13,7 @@ public class AutomaticStatusBarColor {
     fileprivate var disabledViewControllers = [UIViewController]()
     fileprivate var customStatusBarViewControllers = [(controller: UIViewController, style: UIStatusBarStyle)]()
 
-    public var isEnabled = true
+    public var isEnabled = false
     public func disable(forViewController viewController: UIViewController) {
         disabledViewControllers.append(viewController)
     }
@@ -37,16 +37,16 @@ private let swizzling: (UIViewController.Type) -> () = { viewController in
 extension UIViewController {
 
     open override class func initialize() {
-        if AutomaticStatusBarColor.sharedInstance.isEnabled {
-            guard self === UIViewController.self else {
-                return
-            }
-            swizzling(self)
+        guard self === UIViewController.self else {
+            return
         }
+        swizzling(self)
     }
 
     func asb_viewWillAppear(animated: Bool) {
-        if !AutomaticStatusBarColor.sharedInstance.disabledViewControllers.contains(self) {
+
+        if !AutomaticStatusBarColor.sharedInstance.disabledViewControllers.contains(self) &&
+            AutomaticStatusBarColor.sharedInstance.isEnabled {
             let customStatusBarViewControllers = AutomaticStatusBarColor.sharedInstance.customStatusBarViewControllers
 
             if let customTuple = (customStatusBarViewControllers.filter { $0.controller == self }).first {
