@@ -43,6 +43,8 @@ Just hit the method *disable*
 AutomaticStatusBarColor.sharedInstance.disable(forViewController: self)
 ```
 
+###Choose manually status bar color
+
 You can choose status bar color for one controller if you don't like the result or wanna keep the hand over it.
 
 ```swift
