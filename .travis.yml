@@ -1,0 +1,8 @@
+osx_image: xcode8.2
+language: objective-c
+podfile: Example/Podfile
+before_install:
+    - gem install cocoapods
+    - pod repo update
+    - pod install --project-directory=Example/
+script: xcodebuild -workspace Example/AutomaticStatusBarColor.xcworkspace -scheme AutomaticStatusBarColor_Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
