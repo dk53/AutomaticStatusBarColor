@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AutomaticStatusBarColor'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of AutomaticStatusBarColor.'
+  s.version          = '0.9.0'
+  s.summary          = 'A one line component to manage status bar color automaticly throughout your application '
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,20 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Don't worry anymore about the pain of managing status bar thru all your controllers. Simply add one line in your appDelegate and let the plugin do his work.
+  You can disable for one controller, or change by youtself the status bar color.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/AutomaticStatusBarColor'
+  s.homepage         = 'https://github.com/dk53/AutomaticStatusBarColor'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Victor Carmouze' => 'victor.carmouze@backelite.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/AutomaticStatusBarColor.git', :tag => s.version.to_s }
+  s.author           = { 'Victor Carmouze' => 'victor.carmouze@gmail.com' }
+  s.source           = { :git => 'https://github.com/dk53/AutomaticStatusBarColor.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.requires_arc = true
 
-  s.source_files = 'AutomaticStatusBarColor/Classes/**/*'
+  s.source_files = 'Pod/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'AutomaticStatusBarColor' => ['AutomaticStatusBarColor/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
