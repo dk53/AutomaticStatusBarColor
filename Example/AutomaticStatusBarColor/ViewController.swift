@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AutomaticStatusBarColor
 
 class ViewController: UIViewController {
 
@@ -22,4 +21,3 @@ class ViewController: UIViewController {
     }
 
 }
-
