@@ -51,6 +51,11 @@ You can choose status bar color for one controller if you don't like the result 
 AutomaticStatusBarColor.sharedInstance.force(statusBarStyle: .lightContent, forViewController: self)
 ```
 
+## TODO
+
+Control component thru an UIViewController extension.
+Adding the possibility to refresh manually
+
 ## Author
 
 Victor Carmouze, victor.carmouze@gmail.com
