@@ -64,6 +64,7 @@ extension UIViewController {
 
     private func statusBarImage() -> UIImage? {
         UIGraphicsBeginImageContext(UIApplication.shared.statusBarFrame.size)
+
         if let ctx = UIGraphicsGetCurrentContext() {
 
             if let navigationController = navigationController, !navigationController.navigationBar.isHidden {
@@ -73,8 +74,6 @@ extension UIViewController {
             }
         }
 
-        let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        return backgroundImage
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
