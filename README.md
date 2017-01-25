@@ -51,6 +51,10 @@ You can choose status bar color for one controller if you don't like the result 
 AutomaticStatusBarColor.sharedInstance.force(statusBarStyle: .lightContent, forViewController: self)
 ```
 
+###Navigation Bar
+
+If you've planned to use a navigation bar, take care to hide or show it before the `super.viewWillAppear(:)`
+
 ## TODO
 
 Control component thru an UIViewController extension.
