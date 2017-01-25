@@ -44,6 +44,8 @@ extension UIViewController {
     }
 
     func asb_viewWillAppear(animated: Bool) {
+        asb_viewWillAppear(animated: animated)
+
         if !AutomaticStatusBarColor.sharedInstance.disabledViewControllers.contains(self) &&
             AutomaticStatusBarColor.sharedInstance.isEnabled {
             let customStatusBarViewControllers = AutomaticStatusBarColor.sharedInstance.customStatusBarViewControllers
@@ -54,8 +56,6 @@ extension UIViewController {
                 UIApplication.shared.statusBarStyle = statusBarAutomaticStyle()
             }
         }
-
-        asb_viewWillAppear(animated: animated)
     }
 
     private func statusBarAutomaticStyle() -> UIStatusBarStyle {
