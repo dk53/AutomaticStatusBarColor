@@ -67,7 +67,7 @@ extension UIViewController {
 
         if let ctx = UIGraphicsGetCurrentContext() {
 
-            if let navigationController = navigationController, !navigationController.navigationBar.isHidden {
+            if let navigationController = navigationController, !navigationController.isNavigationBarHidden {
                 navigationController.view.layer.render(in: ctx)
             } else {
                 view.layer.render(in: ctx)
