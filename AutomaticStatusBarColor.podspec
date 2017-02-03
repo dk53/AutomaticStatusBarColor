@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AutomaticStatusBarColor'
-  s.version          = '0.9.2'
+  s.version          = '0.9.3'
   s.summary          = 'A one line component to manage status bar color automaticly throughout your application '
 
 # This description is used to generate tags and improve search results.
