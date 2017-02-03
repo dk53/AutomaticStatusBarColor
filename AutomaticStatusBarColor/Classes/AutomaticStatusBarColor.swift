@@ -66,14 +66,9 @@ extension UIViewController {
         UIGraphicsBeginImageContext(UIApplication.shared.statusBarFrame.size)
 
         if let ctx = UIGraphicsGetCurrentContext() {
-
-            if let navigationController = navigationController, !navigationController.isNavigationBarHidden {
-                navigationController.view.layer.render(in: ctx)
-            } else {
-                view.layer.render(in: ctx)
-            }
+            view.layer.render(in: ctx)
         }
-
+        
         return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
