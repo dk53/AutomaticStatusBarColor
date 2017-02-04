@@ -25,7 +25,7 @@ pod 'AutomaticStatusBarColor'
 
 ## Lastest version
 
-1.0.0
+1.0.1
 
 ## Usage
 ### First step
