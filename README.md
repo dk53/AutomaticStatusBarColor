@@ -23,6 +23,10 @@ it, simply add the following line to your Podfile:
 pod 'AutomaticStatusBarColor'
 ```
 
+## Lastest version
+
+1.0.0
+
 ## Usage
 ### First step
 Add the following line to your info.plist : *View controller-based status bar appearance*, and select the value *NO*
@@ -34,13 +38,13 @@ You just have one line to add to your app delegate method  `application: didFini
 AutomaticStatusBarColor.sharedInstance.isEnabled = true
 ```
 
-You can control Automatic status bar by accessing methods thru the singleton `AutomaticStatusBarColor.sharedInstance`
+You can control Automatic status bar by accessing methods thru `UIViewController` extension
 
 ###Disable for one controller
-Just hit the method *disable*
+Just hit the method *disableAutomaticStatusBarColor*
 
 ```swift
-AutomaticStatusBarColor.sharedInstance.disable(forViewController: self)
+disableAutomaticStatusBarColor()
 ```
 
 ###Choose manually status bar color
@@ -48,17 +52,12 @@ AutomaticStatusBarColor.sharedInstance.disable(forViewController: self)
 You can choose status bar color for one controller if you don't like the result or wanna keep the hand over it.
 
 ```swift
-AutomaticStatusBarColor.sharedInstance.force(statusBarStyle: .lightContent, forViewController: self)
+force(statusBarStyle: .lightContent)
 ```
 
 ###Navigation Bar
 
 If you've planned to use a navigation bar, take care to hide or show it before the `super.viewWillAppear(:)`
-
-## TODO
-
-Control component thru an UIViewController extension.
-Adding the possibility to refresh manually
 
 ## Author
 
