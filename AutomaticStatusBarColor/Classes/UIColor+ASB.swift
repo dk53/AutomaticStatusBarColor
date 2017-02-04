@@ -46,9 +46,14 @@ extension UIColor {
 
             // Compute result.
             let result = UIColor(red: CGFloat(bitmap[0]) / 255.0, green: CGFloat(bitmap[1]) / 255.0, blue: CGFloat(bitmap[2]) / 255.0, alpha: CGFloat(bitmap[3]) / 255.0)
-            return result
-            
+
+            if result == UIColor(red: 0, green: 0, blue: 0, alpha: 0) {
+                return UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+            } else {
+                return result
+            }
         }
-        return UIColor.white
+        
+        return UIColor(red: 255, green: 255, blue: 255, alpha: 1)
     }
 }

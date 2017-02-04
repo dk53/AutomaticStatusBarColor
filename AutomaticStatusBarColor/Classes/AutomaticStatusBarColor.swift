@@ -47,7 +47,8 @@ extension UIViewController {
         asb_viewWillAppear(animated: animated)
 
         if !AutomaticStatusBarColor.sharedInstance.disabledViewControllers.contains(self) &&
-            AutomaticStatusBarColor.sharedInstance.isEnabled {
+            AutomaticStatusBarColor.sharedInstance.isEnabled &&
+            view.frame.origin == CGPoint(x: 0, y: 0) {
             let customStatusBarViewControllers = AutomaticStatusBarColor.sharedInstance.customStatusBarViewControllers
 
             if let customTuple = (customStatusBarViewControllers.filter { $0.controller == self }).first {
@@ -68,7 +69,7 @@ extension UIViewController {
         if let ctx = UIGraphicsGetCurrentContext() {
             view.layer.render(in: ctx)
         }
-        
+
         return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
