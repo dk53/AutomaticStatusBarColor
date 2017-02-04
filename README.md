@@ -32,13 +32,10 @@ pod 'AutomaticStatusBarColor'
 Add the following line to your info.plist : *View controller-based status bar appearance*, and select the value *NO*
 
 ###Basic usage
-You just have one line to add to your app delegate method  `application: didFinishLaunchingWithOptions`
 
-```swift
-AutomaticStatusBarColor.sharedInstance.isEnabled = true
-```
+AutomaticStatusBarColor is designed to work thru all your application without a single line of code. 
 
-You can control Automatic status bar by accessing methods thru `UIViewController` extension
+But, if you want some control, you can access AutomaticStatusBarColor methods configuration thru `UIViewController` extension
 
 ###Disable for one controller
 Just hit the method *disableAutomaticStatusBarColor*
