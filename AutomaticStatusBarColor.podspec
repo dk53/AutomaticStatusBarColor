@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'AutomaticStatusBarColor'
   s.version          = '1.0.1'
-  s.summary          = 'A one line component to manage status bar color automaticly throughout your application '
+  s.summary          = 'A zero line component to manage status bar color automaticly throughout your application'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  Don't worry anymore about the pain of managing status bar thru all your controllers. Simply add one line in your appDelegate and let the plugin do his work.
+  Don't worry anymore about the pain of managing status bar thru all your controllers. Simply let the plugin do his work.
   You can disable for one controller, or change by youtself the status bar color.
                        DESC
 

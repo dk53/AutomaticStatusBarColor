@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/AutomaticStatusBarColor.svg?style=flat)](http://cocoapods.org/pods/AutomaticStatusBarColor)
 
 ## Description
-AutomaticStatusBarColor is a lightweight one line component to manage status bar color automaticly throughout your application 
+AutomaticStatusBarColor is a lightweight zero line component to manage status bar color automaticly throughout your application 
 
 ## Example
 
