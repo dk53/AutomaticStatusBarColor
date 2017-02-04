@@ -6,14 +6,15 @@
 //  Copyright (c) 2017 Victor Carmouze. All rights reserved.
 //
 
-public class AutomaticStatusBarColor {
+class AutomaticStatusBarColor {
 
-    public static let sharedInstance = AutomaticStatusBarColor()
+    static let sharedInstance = AutomaticStatusBarColor()
 
     fileprivate var disabledViewControllers = [UIViewController]()
     fileprivate var customStatusBarViewControllers = [(controller: UIViewController, style: UIStatusBarStyle)]()
 
-    public var isEnabled = false
+    fileprivate var isEnabled = true
+
     public func disable(forViewController viewController: UIViewController) {
         disabledViewControllers.append(viewController)
     }
@@ -46,6 +47,10 @@ extension UIViewController {
     func asb_viewWillAppear(animated: Bool) {
         asb_viewWillAppear(animated: animated)
 
+        updateStatusBarColor()
+    }
+
+    fileprivate func updateStatusBarColor() {
         if !AutomaticStatusBarColor.sharedInstance.disabledViewControllers.contains(self) &&
             AutomaticStatusBarColor.sharedInstance.isEnabled &&
             view.frame.origin == CGPoint(x: 0, y: 0) {
@@ -71,5 +76,21 @@ extension UIViewController {
         }
 
         return UIGraphicsGetImageFromCurrentImageContext()
+    }
+}
+
+
+extension UIViewController {
+
+    public func force(statusBarStyle style: UIStatusBarStyle) {
+        AutomaticStatusBarColor.sharedInstance.force(statusBarStyle: style, forViewController: self)
+    }
+
+    public func disableAutomaticStatusBarColor() {
+        AutomaticStatusBarColor.sharedInstance.disable(forViewController: self)
+    }
+    
+    public func reloadAutomaticStatusBarColor() {
+        updateStatusBarColor()
     }
 }
