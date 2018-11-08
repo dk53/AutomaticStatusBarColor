@@ -6,9 +6,13 @@
 //  Copyright (c) 2017 Victor Carmouze. All rights reserved.
 //
 
-class AutomaticStatusBarColor {
+public class AutomaticStatusBarColor {
 
-    static let sharedInstance = AutomaticStatusBarColor()
+    init() {
+        UIViewController.classInit
+    }
+
+    public static let sharedInstance = AutomaticStatusBarColor()
 
     fileprivate var disabledViewControllers = [UIViewController]()
     fileprivate var customStatusBarViewControllers = [(controller: UIViewController, style: UIStatusBarStyle)]()
@@ -24,27 +28,24 @@ class AutomaticStatusBarColor {
     }
 }
 
-private let swizzling: (UIViewController.Type) -> () = { viewController in
-
-    let viewWillAppearSelector = #selector(viewController.viewWillAppear(_:))
-    let swizzledViewWillAppearSelector = #selector(viewController.asb_viewWillAppear(animated:))
-
-    let originalMethod = class_getInstanceMethod(viewController, viewWillAppearSelector)
-    let swizzledMethod = class_getInstanceMethod(viewController, swizzledViewWillAppearSelector)
-
+private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, originalSelector, swizzledSelector in
+    guard
+        let originalMethod = class_getInstanceMethod(forClass, originalSelector),
+        let swizzledMethod = class_getInstanceMethod(forClass, swizzledSelector)
+        else { return }
     method_exchangeImplementations(originalMethod, swizzledMethod)
 }
 
+
 extension UIViewController {
 
-    open override class func initialize() {
-        guard self === UIViewController.self else {
-            return
-        }
-        swizzling(self)
-    }
+    static let classInit: Void = {
+        let originalSelector = #selector(viewWillAppear(_:))
+        let swizzledSelector = #selector(asb_viewWillAppear(animated:))
+        swizzling(UIViewController.self, originalSelector, swizzledSelector)
+    }()
 
-    func asb_viewWillAppear(animated: Bool) {
+    @objc func asb_viewWillAppear(animated: Bool) {
         asb_viewWillAppear(animated: animated)
 
         updateStatusBarColor()
@@ -89,7 +90,7 @@ extension UIViewController {
     public func disableAutomaticStatusBarColor() {
         AutomaticStatusBarColor.sharedInstance.disable(forViewController: self)
     }
-    
+
     public func reloadAutomaticStatusBarColor() {
         updateStatusBarColor()
     }

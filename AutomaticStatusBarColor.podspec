@@ -8,8 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AutomaticStatusBarColor'
-  s.version          = '1.0.1'
-  s.summary          = 'A zero line component to manage status bar color automaticly throughout your application'
+  s.version          = '2.0.0'
+  s.summary          = 'A one line component to manage status bar color automaticly throughout your application'
+  s.swift_version    = '4.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -33,5 +34,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'AutomaticStatusBarColor/Classes/*'
-  
+
 end

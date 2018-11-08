@@ -23,7 +23,12 @@ it, simply add the following line to your Podfile:
 pod 'AutomaticStatusBarColor'
 ```
 
-## Lastest version
+## Lastest Swift 4 version
+
+2.0.0
+
+
+## Lastest Swift 3 version
 
 1.0.1
 
