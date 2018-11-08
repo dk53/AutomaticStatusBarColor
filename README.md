@@ -38,6 +38,20 @@ Add the following line to your info.plist : *View controller-based status bar ap
 
 ### Basic usage
 
+AutomaticStatusBarColor is designed to work thru all your application with a single line of code.
+
+You should add this line in your app delegate :
+
+```swift
+_ = AutomaticStatusBarColor.sharedInstance
+```
+
+
+But, if you want some control, you can access AutomaticStatusBarColor methods configuration thru `UIViewController` extension
+
+
+### Basic usage (Swift 3)
+
 AutomaticStatusBarColor is designed to work thru all your application without a single line of code. 
 
 But, if you want some control, you can access AutomaticStatusBarColor methods configuration thru `UIViewController` extension
